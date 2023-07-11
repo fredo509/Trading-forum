@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  #kindly replace your database user acces
+  username: postgres
+  #kindly replace your database password
+  password: 4627
+
+development:
+  <<: *default
+  database: Trading-forum_development
+
+test:
+  <<: *default
+  database: Trading-forum_test
