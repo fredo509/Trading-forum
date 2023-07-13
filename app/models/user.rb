@@ -1,15 +1,17 @@
-class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable
-  has_many :posts
-  has_many :comments, through: :posts
-  has_many :likes, through: :posts
-  validates :name, presence: true
-  validates :post_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+class User < ApplicationRecord
+  has_many :posts, foreign_key: :author_id
+  has_many :comments, foreign_key: :author_id
+  has_many :likes, foreign_key: :author_id
 
-  def recent_three_posts
-    posts.includes(:comments, :likes).last(3)
+  def recent_posts
+    posts.order(created_at: :desc).limit(3)
+  end
+
+  def update_posts_counter
+    update(posts_counter: posts.count)
+  end
+
+  def update_comments_counter
+    update(comments_counter: comments.count)
   end
 end
