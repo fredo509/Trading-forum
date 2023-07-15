@@ -22,6 +22,11 @@ RSpec.describe Post, type: :model do
       expect(@post).to be_valid
     end
 
+    it 'Title must not exceed 250 characters' do
+     @post.title = 'abc' * 100 ## post tile is more that 250 characters 
+      expect(@post).to_not be_valid
+    end
+
     it 'CommentsCounter must be an integer greater than or equal to zero' do
       @post.comments_counter = 'string'
       expect(@post).to_not be_valid
