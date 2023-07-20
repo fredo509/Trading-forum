@@ -1,91 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0, 900;1,300;1,400;1,500;1,900&display=swap');
 
 * {
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    color: black;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: black;
 }
 
 main {
-    margin: 10% 12%;
+  margin: 10% 12%;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .left {
-    text-align: left;
+  text-align: left;
 }
 
 .right {
-    text-align: right;
+  text-align: right;
 }
 
 .users-title {
-    padding: 15px;
-    margin: 15px 0;
+  padding: 15px;
+  margin: 15px 0;
 }
 
 .card {
-    display: flex;
-    padding: 10px;
-    margin: 10px 0;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
-    transition: 0.4s;
+  display: flex;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+  transition: 0.4s;
 }
 
 .flexColumn {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .hover:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 .user-image {
-    flex: 20%;
+  flex: 20%;
 }
 
 .user-data {
-    padding: 10px;
-    text-align: left;
-    margin: 3%;
-    flex: 70%;
+  padding: 10px;
+  text-align: left;
+  margin: 3%;
+  flex: 70%;
 }
 
 .border {
-    border: 3px solid black;
-    border-radius: 5px;
+  border: 3px solid black;
+  border-radius: 5px;
 }
 
 .number-posts {
-    padding: 10px;
-    text-align: right;
+  padding: 10px;
+  text-align: right;
 }
 
 .btn {
-    cursor: pointer;
-    background-color: white;
-    border: 1px solid #2d2d2d;
-    box-shadow: 3px 5px;
-    padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #2d2d2d;
+  box-shadow: 3px 5px;
+  padding: 0.25rem 0.5rem;
 }
 
 .comments-container {
-    padding: 10px;
+  padding: 10px;
 }
