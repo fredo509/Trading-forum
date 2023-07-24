@@ -10,7 +10,13 @@ default: &default
 development:
   <<: *default
   database: Trading-forum_development
+  username: postgres
+  #kindly replace your database password
+  password: 4627
 
 test:
   <<: *default
   database: Trading-forum_test
+  username: postgres
+  #kindly replace your database password
+  password: 4627
