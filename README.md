@@ -163,6 +163,12 @@ To run tests, run the following command:
 - Twitter: [@Fredo_st_fleur](https://twitter.com/Fredo_st_fleur?t=kXdEx7GqmngfCYId_vu8Tg&s=09)
 - LinkedIn: [fredo-st-fleur](https://www.linkedin.com/in/fredo-st-fleur)
 
+👤 **Vanessa Oliveros Padron**
+
+- GitHub: [@vvoo21](https://github.com/vvoo21)
+- Twitter: [@vaneoliverosp](https://twitter.com/vaneoliverosp)
+- LinkedIn: [vaneoliverosp](https://www.linkedin.com/in/vaneoliverosp/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
