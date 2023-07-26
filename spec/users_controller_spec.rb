@@ -6,8 +6,7 @@ RSpec.describe '/users', type: :request do
       name: 'Precious Betine',
       photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
       bio: 'Student at Microverse.',
-      posts_counter: 0,
-      id:1
+      posts_counter: 0
     )
   end
 
@@ -16,8 +15,7 @@ RSpec.describe '/users', type: :request do
       name: 'John Doe',
       photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
       bio: 'Student at Unknown.',
-      posts_counter: 0,
-      id:2
+      posts_counter: 0
     )
   end
 
@@ -44,6 +42,7 @@ RSpec.describe '/users', type: :request do
 
       expect(response.body).to include person1.name
       expect(response.body).to include person1.bio
+      expect(response.body).to include person1.photo
     end
   end
 end
