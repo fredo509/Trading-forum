@@ -102,8 +102,7 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
     erubi (1.12.0)
-    execjs (2.8.1)
-    ffi (1.15.5)
+
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -278,8 +277,7 @@ DEPENDENCIES
   bootstrap (~> 5.0.2)
   capybara
   debug
-  devise (~> 4.9)
-  ffi
+
   importmap-rails
   jbuilder
   jquery-rails
