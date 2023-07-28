@@ -13,34 +13,28 @@
       height: 100vh;
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
     }
     .container {
-      max-width: 300px;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px; /* Add more margin at the bottom */
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin-bottom: 30px;
+      box-sizing: border-box;
     }
     .form-group {
       margin-bottom: 15px;
     }
     .smaller-input {
       width: 100%;
-      max-width: 250px;
+      height: 30px;
     }
-    .form-check {
-      display: flex;
-      align-items: center;
-    }
-    .form-check-label {
-      margin-left: 5px;
-    }
+  
     .btn {
       width: 100%;
+      max-width: 300px;
       margin-top: 25px;
       margin-bottom: 25px;
+      margin-left: -0.5px;
     }
   </style>
 </head>
@@ -48,23 +42,16 @@
   <div class="container">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "needs-validation", novalidate: true}) do |f| %>
       <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control smaller-input", required: true %>
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control smaller-input", required: true, placeholder:"Username" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control smaller-input", required: true %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control smaller-input", required: true, placeholder:"Password" %>
       </div>
 
-      <% if devise_mapping.rememberable? %>
-        <div class="form-check">
-          <%= f.check_box :remember_me, class: "form-check-input" %>
-          <%= f.label :remember_me, class: "form-check-label" %>
-        </div>
-      <% end %>
-
-      <%= f.submit "Log in", class: "btn btn-primary mt-3" %>
+      <div class="form-group">
+        <%= f.submit "Log in", class: "btn btn-primary mt-3" %>
+      </div>
     <% end %>
 
     <%= render "users/shared/links" %>

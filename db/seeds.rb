@@ -1,5 +1,5 @@
-first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', id: 100, role: 'ADMIN', email: 'tom@example.com', password: '123456')
-second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.', id: 200, email: 'lilly@example.com', password: '123456')
+first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', id: 100, role: 'ADMIN', email: 'tom@example.com', username:'Tommy', password: '123456')
+second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.', id: 200, email: 'lilly@example.com',username:'Lillou', password: '123456')
 
 4.times do
   first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
