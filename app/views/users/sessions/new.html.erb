@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    /* Custom CSS to center all content on the page */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin-bottom: 30px;
+      box-sizing: border-box;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .smaller-input {
+      width: 100%;
+      height: 30px;
+    }
+  
+    .btn {
+      width: 100%;
+      max-width: 300px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      margin-left: -0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "needs-validation", novalidate: true}) do |f| %>
+      <div class="form-group">
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control smaller-input", required: true, placeholder:"Username" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control smaller-input", required: true, placeholder:"Password" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Log in", class: "btn btn-primary mt-3" %>
+      </div>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+  </div>
+</body>
+</html>

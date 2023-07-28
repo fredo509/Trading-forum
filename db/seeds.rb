@@ -1,19 +1,19 @@
-first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', id: 1)
-second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.', id: 2)
+first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', id: 100, role: 'ADMIN', email: 'tom@example.com', username:'Tommy', password: '123456')
+second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.', id: 200, email: 'lilly@example.com',username:'Lillou', password: '123456')
 
 4.times do
-  first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post', id: 1)
+  first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
 
   # Verify the post creation
   puts "Post Title: #{first_post.title}"
   puts "Post Author: #{first_post.author.name}"
 
   # Create comments
-  Comment.create(post: first_post, author: second_user, text: 'Hi Tom!', author_id: 1)
-  Comment.create(post: first_post, author: second_user, text: 'Nice post!', author_id: 1)
-  Comment.create(post: first_post, author: second_user, text: 'Keep it up!', author_id: 1)
-  Comment.create(post: first_post, author: second_user, text: 'Great work!', author_id: 1)
-  Comment.create(post: first_post, author: second_user, text: 'Awesome!', author_id: 1)
+  Comment.create(post: first_post, author: second_user, text: 'Hi Tom!', author_id: 100)
+  Comment.create(post: first_post, author: second_user, text: 'Nice post!', author_id: 100)
+  Comment.create(post: first_post, author: second_user, text: 'Keep it up!', author_id: 100)
+  Comment.create(post: first_post, author: second_user, text: 'Great work!', author_id: 100)
+  Comment.create(post: first_post, author: second_user, text: 'Awesome!', author_id: 100)
   Comment.create(post: first_post, author: second_user, text: 'Well done!', author_id: 1)
 
   # Verify the comments
