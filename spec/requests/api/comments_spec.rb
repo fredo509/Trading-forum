@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'swagger_helper'
 
-RSpec.describe 'api/comments', type: :request do
+RSpec.describe 'api/comments', type: :request do 
   path '/api/v1/users/{user_id}/posts/{post_id}/comments' do
     parameter name: 'user_id', in: :path, type: :string, description: 'ID of a user'
     parameter name: 'post_id', in: :path, type: :string, description: 'ID of a post'
