@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Post < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   has_many :comments, dependent: :destroy
@@ -6,8 +8,8 @@ class Post < ApplicationRecord
   after_create :update_author_posts_counter
 
   validates :title, presence: true, length: { maximum: 250 }
-  validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 , allow_nil: true}
-  validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0, allow_nil: true}
+  validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0, allow_nil: true }
+  validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0, allow_nil: true }
 
   def update_author_posts_counter
     author.update_posts_counter
@@ -22,6 +24,6 @@ class Post < ApplicationRecord
   end
 
   def recent_comments
-   comments.order(created_at: :desc).includes([:author]).limit(5)
+    comments.order(created_at: :desc).includes([:author]).limit(5)
   end
 end

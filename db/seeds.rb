@@ -29,13 +29,13 @@ puts "Updated User: #{updated_user.name}"
 
 post = updated_user.posts.find_by(title: 'Hello')
 puts "Post Title: #{post.title}" if post
-post.update(title: 'Greetings', text: 'This is my updated post') if post
+post&.update(title: 'Greetings', text: 'This is my updated post')
 updated_post = updated_user.posts.find_by(title: 'Greetings')
 puts "Updated Post Title: #{updated_post.title}" if updated_post
 
 comment = updated_post.comments.find_by(text: 'Hi Tom!') if updated_post
 puts "Comment Text: #{comment.text}" if comment
-comment.destroy if comment
+comment&.destroy
 puts "Comment Count after deletion: #{updated_post.comments.count}" if updated_post
 
 # Call the methods
