@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostSerializer < ActiveModel::Serializer
   attributes :author, :title, :text, :comments_counter, :likes_counter
 

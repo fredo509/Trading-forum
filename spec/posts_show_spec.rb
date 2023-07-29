@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Post Show', type: :system do
@@ -38,7 +40,8 @@ RSpec.describe 'Post Show', type: :system do
 
   it 'displays the user name commentor' do
     user = User.create(name: 'Tom Jenkins', photo: 'https://short.url/example', posts_counter: 5)
-    post = Post.create(title: 'My First Post', text: 'This is my first post', author_id: user.id, comments_counter: 0, likes_counter: 0)
+    post = Post.create(title: 'My First Post', text: 'This is my first post', author_id: user.id, comments_counter: 0,
+                       likes_counter: 0)
 
     comment = Comment.create(text: 'This is my first comment', author_id: user.id, post_id: post.id)
     visit user_post_path(user_id: user.id, id: post.id)
@@ -47,7 +50,8 @@ RSpec.describe 'Post Show', type: :system do
 
   it 'displays the comment text' do
     user = User.create(name: 'Tom Jenkins', photo: 'https://short.url/example', posts_counter: 5)
-    post = Post.create(title: 'My First Post', text: 'This is my first post', author_id: user.id, comments_counter: 0, likes_counter: 0)
+    post = Post.create(title: 'My First Post', text: 'This is my first post', author_id: user.id, comments_counter: 0,
+                       likes_counter: 0)
 
     comment = Comment.create(text: 'This is my first comment', author_id: user.id, post_id: post.id)
     visit user_post_path(user_id: user.id, id: post.id)

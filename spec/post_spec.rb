@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
@@ -23,7 +25,7 @@ RSpec.describe Post, type: :model do
     end
 
     it 'Title must not exceed 250 characters' do
-     @post.title = 'abc' * 100 ## post tile is more that 250 characters 
+      @post.title = 'abc' * 100 ## post tile is more that 250 characters
       expect(@post).to_not be_valid
     end
 

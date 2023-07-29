@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 Capybara.default_max_wait_time = 5
 RSpec.describe 'User Show Page', type: :system do
-   before do
+  before do
     driven_by(:rack_test)
     @user = User.create(
       name: 'Fredo',
       photo: 'https://unsplash.com/es/fotos/04OtkxJTQR4',
       bio: 'Life is awesome 1',
-      posts_counter: 4,
+      posts_counter: 4
     )
     @post1 = Post.create(
       title: 'Life 1',
