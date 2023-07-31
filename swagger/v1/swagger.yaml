@@ -1,0 +1,77 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/users/{user_id}/posts/{post_id}/comments":
+    parameters:
+    - name: user_id
+      in: path
+      description: ID of a user
+      required: true
+      schema:
+        type: string
+    - name: post_id
+      in: path
+      description: ID of a post
+      required: true
+      schema:
+        type: string
+    get:
+      summary: List all comments on a user's post
+      tags:
+      - Comments
+      responses:
+        '200':
+          description: Successful
+    post:
+      summary: Create a comment on a user's post
+      tags:
+      - Comments
+      parameters:
+      - name: X-Token
+        in: header
+        description: API token
+        required: true
+        schema:
+          type: string
+      description: Your API token is generated on sign up. It is located on your user
+        profile page.
+      responses:
+        '201':
+          description: Comment created
+        '400':
+          description: Comment not created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+              - text
+  "/api/v1/users/{user_id}/posts":
+    get:
+      summary: List all posts for user with user_id
+      tags:
+      - Posts
+      parameters:
+      - name: user_id
+        in: path
+        description: user_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful
+        '400':
+          description: User not found
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

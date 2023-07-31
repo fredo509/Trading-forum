@@ -9,9 +9,10 @@ gem 'active_model_serializers', '~> 0.10.13'
 gem 'rails', '~> 7.0.6'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem 'bcrypt'
+gem 'cancancan'
+gem 'jwt'
 gem 'sprockets-rails'
-gem "jwt"
-gem "bcrypt"gem 'cancancan'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
@@ -79,3 +80,5 @@ group :test do
 end
 
 gem 'devise', '~> 4.9'
+
+gem 'rswag'
